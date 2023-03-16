@@ -1,38 +1,487 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+hr{
+    height: 3px;
+    width: 95%;
+    color: #000;
+    margin: 10px auto;
+}
+
+.barra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 60px;
+    width: 500px;
+    margin: 2% 2% 0 0;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 40px;
+    position: fixed;
+}
+
+.links{
+    height: 60px;
+}
+
+.barra a{
+    height: 60px;
+    font-size:15px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.barra a:hover{
+    color: rgb(250, 235, 215);;
+}
+
+.barra-btn{
+    display: none;
+    height: 60px;
+    width: 60px;
+    margin: 2% 2% 0 0;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.main-image{
+    width: 100%;
+    height: 300px;
+    background-image: url('./imagenes/pf2.jpg');
+    background-size: cover;
+}
+
+.persona{
+    width: 600px;
+    min-height: 100px;
+    flex-wrap: wrap;
+    color: #000;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    margin-top: -50px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.persona:hover .foto-carnet{
+    transform: translateX(400px);
+} 
+
+.persona:hover .job{
+    display: none;
+} 
+
+.persona:hover .nombre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -200px;
+} 
+
+.foto-carnet{
+    background-image: url('../src/imagenes/foto-carnet.jpg');
+    background-size: contain;
+    height: 87px;
+    width: 87px;
+    transition: transform 0.6s ;
+}
+
+.nombre{
+    display: none;
+    margin-bottom: -10px;
+}
+.job{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 0 -10px -20px;
+}
+
+/*ACERCA DE MI*/
+
+.acerca-de-mi{
+    width: 100%;
+    min-height: 350px;
+    color: #fff;
+    background-color: #000;
+}
+
+.foto{
+    height: 300px;
+    width: 300px;
+    background-image: url('./imagenes/pf1.jpg');
+    background-size: cover;
+}
+
+/*Tecnologias*/
+
+.tecs{
+    width: 100%;
+    min-height: 390px;
+    background-color: antiquewhite;
+}
+
+.compu{
+    background-image: url('../src/imagenes/compu.jpg');
+    background-size: cover;
+}
+
+.compu-2{
+    display: none;
+}
+
+.lenguajes{
+    height: 130px;
+}
+.react{
+    height: 50px;
+    width: 50px;
+    background-image: url('../src/imagenes/physics.png');
+    background-size: cover;
+    transition: transform 1.5s, width 0.3s, height 0.3s;
+
+}
+
+.react:hover{
+    height: 100px;
+    width: 100px;
+    transform: translateY(150%);
+}
+
+.js{
+    height: 50px;
+    width: 50px;
+    background-image: url('../src/imagenes/js.png');
+    background-size: cover;
+    transition: transform 1.5s, width 0.2s, height 0.2s;
+}
+
+.js:hover{
+    height: 100px;
+    width: 100px;
+    transform: translateX(200%);
+}
+
+.bs{
+    height: 50px;
+    width: 50px;
+    background-image: url('../src/imagenes/bootstrap.png');
+    background-size: cover;
+    transition: transform 1.5s, width 0.2s, height 0.2s;
+}
+
+.bs:hover{
+    height: 100px;
+    width: 100px;
+    transform: translateX(-200%);
+}
+
+.html{
+    height: 50px;
+    width: 50px;
+    background-image: url('../src/imagenes/html-5.png');
+    background-size: cover;
+    transition: transform 1.5s, width 0.2s, height 0.2s;
+}
+
+.html:hover{
+    height: 100px;
+    width: 100px;
+    transform: translate(150%,-130%);
+}
+
+.css{
+    height: 50px;
+    width: 50px;
+    background-image: url('../src/imagenes/css-3.png');
+    background-size: cover;
+    transition: transform 1.5s, width 0.2s, height 0.2s;
+}
+
+.css:hover{
+    height: 100px;
+    width: 100px;
+    transform: translate(-150%,-130%);
+}
+
+.icon{
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+    margin:10px;
+}
+
+.lista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tqm{
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.lista ul{
+    list-style: none;
+    font-size: 2rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/*PROYECTOS*/
+
+.proyectos-container{
+    height: 120px;
+    width: 100%;
+    background-color: #fff;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVzG1s3IOmUAmNejhAIycdBwxm8Aa_lrfw7A&usqp=CAU');
+}
+
+.proyectos-titulo{
+    height: 100%;
+    border-bottom: 2px solid #000;
+    }
+
+.proyectos-titulo h2{
+    margin: 0 0 0 5%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.bi-arrow-right-circle:hover{
+    color: #fff;
+    background-color: #000;
+}
+
+.proyectos-cuerpo{
+    display: none;
+    flex-wrap: nowrap;
+    height: 80%;
+    
+}
+
+/*CARDS*/
+
+    .card-container{
+        padding: 30px 50px;
+    }
+
+  .card {
+    --blur: 16px;
+    --size: clamp(300px, 50vmin, 500px);
+    width: var(--size);
+    aspect-ratio: 4 / 3;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    color: #000;
+    transform: translateZ(0);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(calc(1 + (var(--hover, 0) * 0.25))) rotate(calc(var(--hover, 0) * -5deg));
+    transition: transform 0.2s;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .card__footer {
+    padding: 0 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5ch;
+    background: hsl(0 0% 100% / 0.5);
+    backdrop-filter: blur(var(--blur));
+    height: 30%;
+    align-content: center;
   }
+  
+  .card__action {
+    position: absolute;
+    aspect-ratio: 1;
+    width: calc(var(--size) * 0.15);
+    bottom: 30%;
+    right: 1.5rem;
+    transform: translateY(50%)
+      translateY(
+        calc(
+          (var(--size) * 0.4)
+        )
+      )
+      translateY(calc(var(--hover, 0) * (var(--size) * -0.4)));
+    background: purple;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    background: hsl(0 0% 100% / 0.5);
+  /*   backdrop-filter: blur(calc(var(--blur) * 0.5)); */
+    transition: transform 0.2s;
+  }
+  
+  .card__action svg {
+    aspect-ratio: 1;
+    width: 50%;
+  }
+  
+  .card__footer span:nth-of-type(1) {
+    font-size: calc(var(--size) * 0.065);
+  }
+  
+  .card__footer span:nth-of-type(2) {
+    font-size: calc(var(--size) * 0.035);
+  }
+  
+  .card:is(:hover, :focus-visible) {
+    --hover: 1;
+  }
+
+  .footer{
+    min-height: 400px;
+    width: 100%;
+    color:#fff;
+    background-image: url('https://img.pikbest.com/backgrounds/20190312/black-and-white-modern-minimalist-style-geometric-line-banner-background_2751856.jpg!bwr800');
+    background-size: cover;
+    text-align: center;
+  }
+
+  .footer a{
+      font-size: 20px;
+      color: #fff;
+      text-decoration: none;
+  }
+
+  .footer a:hover{
+    text-decoration: underline;
+}
+
+.footer hr{
+    color: #fff;
+    height: 2px;
+    width: 80%;
+    margin: 10px auto;
+}
+
+  .media-icons{
+      height: 50px;
+      width: 50px;
+      margin: 20px;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .media-icons:hover{
+    color:#000;
+    background-color: #fff;
+}
+
+@media(max-width:790px){
+
+    .persona:hover .foto-carnet{
+        transform: translateX(340px);
+    } 
+
+    .tecs{
+        background-image: url('../src/imagenes/fondo-beige.jpg');
+        background-size: cover;
+    }
+
+    .compu-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 100%;
+        }
+
+    .compu{
+        display: none;
+    }
+
+  .icon:hover{
+      height: 100px;
+      width: 100px;
+      transform: translate(0);
+  }
+    .tqm h2{
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .lista{
+        display: none;
+    }
+
+    .card{
+        --size: clamp(350px, 50vmin, 500px);
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:576px){
+
+    .persona{
+        width: 350px;
+        font-size: 30px;
+    }
+
+    .persona:hover .foto-carnet{
+        transform: translateX(150px);
+    } 
+
+    .icon{
+        height: 40px;
+        width: 40px;
+    }
+    .icon:hover{
+        height: 60px;
+        width: 60px;
+    }
+    .tqm h2{
+        font-size: 40px;
+    }
+    .card{
+        --size: clamp(300px, 50vmin, 500px);
+        margin: 0 auto;
+    }
+
+    .media-icons{
+        height: 40px;
+        width: 40px;
+        margin: 20px;
+    }
+}
+
+@media(max-width: 460px){
+
+    .barra-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .barra{
+        display:none;
+    }
 }
